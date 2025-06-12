@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Welcome to the Job Board Platform</h2>
+
+
+<div class="nav-buttons">
+    <a href="/apply/1/" class="btn">Register for Jobs</a>
+    <a href="/candidate/dashboard/" class="btn">Candidate Dashboard</a>
+    <a href="/employer/dashboard/" class="btn">Employer Dashboard</a>
+</div>
+
+<h2>Available Jobs</h2>
+<ul>
+    {% for job in jobs %}
+        <li><a href="/jobs/{{ job.id }}/">{{ job.title }}</a> - {{ job.location }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
